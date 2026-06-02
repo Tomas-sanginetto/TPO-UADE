@@ -1,0 +1,34 @@
+def opciones_menu():
+    print("=" * 50)
+    print("SISTEMA DE GESTIÓN: CINEVERSE COMPLEX")
+    print("1. Registrar Pelicula")
+    print("2. Eliminar Pelicula")
+    print("3. Modificar Pelicula")
+    print("4. Informe General")
+    print("5. Salir")
+    print("=" * 50)
+
+
+def ingresar_opcion(minimo, maximo):
+    opcion = int(input("Seleccione una opcion:"))
+    while opcion < minimo or opcion > maximo:
+        print("La opcion seleccionada no es valida")
+        opcion = int(input("Seleccione una opcion:"))
+    return opcion
+
+
+def ingresar_positivo(mensaje):
+    num = int(input(mensaje))
+    while num <= 0:
+        print("Error debe ser positivo")
+        num = int(input(mensaje))
+    return num
+# Necesitamos segunda funcion que acepte cero
+
+
+def ingresar_no_negativo(mensaje):
+    num = int(input(mensaje))
+    while num < 0:
+        print("Error, debe ser un número no negativo")
+        num = int(input(mensaje))
+    return num
