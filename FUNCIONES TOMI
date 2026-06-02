@@ -32,3 +32,35 @@ def ingresar_no_negativo(mensaje):
         print("Error, debe ser un número no negativo")
         num = int(input(mensaje))
     return num
+
+
+def ingresar_valor_entrada(mensaje):
+    precio = float(input(mensaje))
+    while precio < 0:
+        print("Debe ser un valor positivo")
+        precio = float(input(mensaje))
+    return precio
+
+
+def ingresar_titulo(mensaje):
+    lst_titulos = ["Avengers", "Titanic", "Dune", "Avatar", "El Padrino"]
+    for i in range(len(lst_titulos)):
+        print(f"{i + 1} {lst_titulos[i]}")
+
+    num = int(input("Ingrese que pelicula quiere ver (Segun el numero):"))
+    while num < 1 or num > len(lst_titulos):
+        print("Numero invalido, intentelo nuevamente")
+        num = int(input("Ingrese que pelicula quiere ver (Segun el numero):"))
+    return lst_titulos[num - 1]
+
+
+def validar_titulo(mensaje):
+    titulo = input(mensaje)
+    while titulo == "":
+        print("No se ingreso ningun titulo, intentelo denuevo")
+        titulo = input(mensaje)
+    return titulo
+
+
+def ingresar_genero():
+    
