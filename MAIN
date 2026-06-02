@@ -1,14 +1,32 @@
+from funciones import *
+
+
 def main():
-    print("=" * 50)
-    print("SISTEMA DE GESTIÓN: CINEVERSE COMPLEX")
-    print("1. Registrar pelicula")
-    print("2. Eliminar Pelicula")
-    print("3. Modificar Pelicula")
-    print("4. Informe General")
-    print("5. Salir")
-    print("=" * 50)
-    numero = int(input("Ingrese una opción (1-4 o 5 para salir):"))
-    print(numero)
+    lst_titulos = []
+    lst_generos = []
+    lst_duraciones = []
+    lst_salas = []
+    lst_entradas = []
+    lst_valores = []
+    lst_estados = []
+
+    opciones_menu()
+    opcion = ingresar_opcion(1, 5)
+    while opcion != 5:
+
+        if opcion == 1:
+            print("Funcionalidad pendiente")  # Registrar
+        elif opcion == 2:
+            print("Funcionalidad pendiente")  # Eliminar
+        elif opcion == 3:
+            print("Funcionalidad pendiente")  # Modificar
+        elif opcion == 4:
+            print("Funcionalidad pendiente")  # Informe General
+
+        opciones_menu()
+        opcion = ingresar_opcion(1, 5)
+
+    print("Gracias por usar CineVerse Complex")
 
 
 main()
