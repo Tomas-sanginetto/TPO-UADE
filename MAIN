@@ -1,0 +1,14 @@
+def main():
+    print("=" * 50)
+    print("SISTEMA DE GESTIÓN: CINEVERSE COMPLEX")
+    print("1. Registrar pelicula")
+    print("2. Eliminar Pelicula")
+    print("3. Modificar Pelicula")
+    print("4. Informe General")
+    print("5. Salir")
+    print("=" * 50)
+    numero = int(input("Ingrese una opción (1-4 o 5 para salir):"))
+    print(numero)
+
+
+main()
