@@ -1,0 +1,38 @@
+#CineVerse Complex requiere una solución que permita centralizar la administración y análisis de información relacionada con películas, funciones y rendimiento comercial gestionados por el complejo cinematográfico.Actualmente, gran parte de la información se encuentra distribuida en registros manuales y planillas independientes, dificultando el control de la programación, la ocupación de salas y la generación de reportes operativos.El objetivo del presente proyecto es desarrollar una herramienta interactiva que permita administrar películas y funciones, mantener información sincronizada y generar informes de análisis para apoyar la toma de decisiones de supervisores y responsables de programación.El desarrollo será realizado de manera incremental mediante dos fases evolutivas, donde cada versión incorporará nuevas funcionalidades y mejoras sobre la versión anterio
+#Objetivos del Sistema
+#El sistema deberá permitir:
+#• Centralizar la información de películas y funciones.
+#• Registrar y administrar nuevas películas.
+#• Modificar información relevante de la programación.
+#• Eliminar películas que ya no se encuentren en exhibición.
+#• Generar informes operativos y estratégicos.
+#• Facilitar el análisis de asistencia y rentabilidad según distintos criterios.
+#• Mantener una interacción simple, clara y continua para el usuario.
+
+#Corresponde al nombre de la película exhibida en el complejo.
+def título_de_la_pelicula():
+    lista_peliculas = ["1:El Padrino", "2:El Señor de los Anillos", "3:Titanic", "4:Avatar", "5:Avengers: Endgame", "6:Jurassic Park", "7:The Matrix", "8:El caballero oscuro", "9:Interstellar", "10:Dune"]
+    for pelicula in lista_peliculas:
+        print(pelicula)
+    
+
+
+#Indica la categoría principal de la película
+def genero_principal():
+
+#Representa la duración total de la película.
+def duracion_en_minutos():
+
+def sala_asignada():
+
+def cantidad_entradas_vendidas():
+
+def valor_promedio_entrada():
+
+def estado_de_exhibicion():
+
+def main():#la persona teien que elegir una pelicula
+    print("Bienvenido a CineVerse Complex")
+    print("Por favor, elija una película de la lista para obtener información detallada:")
+    print("Películas disponibles:")
+    título_de_la_pelicula()
