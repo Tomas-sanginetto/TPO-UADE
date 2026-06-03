@@ -1,0 +1,40 @@
+def eliminar_pelicula():
+    print('--ELIMINAR PELICULA───────────────────────────')
+    if len(lista_peliculas) == 0:
+        print("No hay peliculas registradas.")
+        return
+    
+    indice = menu_peliculas()
+
+    if estados[indice] != 'Finalizada':
+        print(f"No se puede eliminar la pelicula '{lista_peliculas[indice]}'")
+        print(f"  Solo se pueden eliminar películas con estado 'Finalizada'.")
+        print(f"  Estado actual: {estados[indice]}")
+        return
+    
+    print(f"\nPelícula seleccionada: {lista_peliculas[indice]}")
+    print("¿Está seguro que desea eliminarla?")
+    print("  1. Sí, eliminar")
+    print("  2. No, cancelar")
+
+    confirmacion = int(input("Seleccione una opción: "))
+
+    if confirmacion == 1:
+        titulo_eliminado = lista_peliculas[indice]
+        lista_peliculas.pop(indice)
+        generos.pop(indice)
+        duraciones.pop(indice)
+        salas.pop(indice)
+        entradas.pop(indice)
+        valores.pop(indice)
+        estados.pop(indice)
+        print(f"\n✓ '{titulo_eliminado}' eliminada correctamente.")
+    elif confirmacion == 2:
+        print("Operación cancelada.")
+
+
+    
+    
+    
+
+
