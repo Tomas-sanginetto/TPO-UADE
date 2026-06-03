@@ -11,21 +11,21 @@ def main():
     lst_estados = []
 
     opciones_menu()
-    opcion = ingresar_opcion(1, 5)
-    while opcion != 5:
+    n = int(input("Ingrese una opcion:")) # Corregir, tira dos veces seleccionar
+    ingresar_opcion(n)
+    while n != 5:
 
-        if opcion == 1:
+        if n == 1:
             print("Funcionalidad pendiente")  # Registrar
-        elif opcion == 2:
+        elif n == 2:
             print("Funcionalidad pendiente")  # Eliminar
-        elif opcion == 3:
+        elif n == 3:
             print("Funcionalidad pendiente")  # Modificar
-        elif opcion == 4:
+        elif n == 4:
             print("Funcionalidad pendiente")  # Informe General
 
         opciones_menu()
-        opcion = ingresar_opcion(1, 5)
-
+        n = ingresar_opcion(n)
     print("Gracias por usar CineVerse Complex")
 
 
