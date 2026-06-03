@@ -28,7 +28,7 @@ def eliminar_pelicula():
         entradas.pop(indice)
         valores.pop(indice)
         estados.pop(indice)
-        print(f"\ '{titulo_eliminado}' eliminada correctamente.")
+        print(f" '{titulo_eliminado}' eliminada correctamente.")
     elif confirmacion == 2:
         print("Operación cancelada.")
 
