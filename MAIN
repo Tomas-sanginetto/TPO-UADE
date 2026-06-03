@@ -11,22 +11,24 @@ def main():
     lst_estados = []
 
     opciones_menu()
-    n = int(input("Ingrese una opcion:")) # Corregir, tira dos veces seleccionar
-    ingresar_opcion(n)
+    n = int(input("Seleccione una opcion: ")) # Corregir, tira dos veces seleccionar
+    n = ingresar_opcion(n)
     while n != 5:
 
         if n == 1:
-            print("Funcionalidad pendiente")  # Registrar
+            registrar_pelicula(lst_titulos, lst_generos, lst_duraciones, lst_salas, lst_entradas, lst_valores, lst_estados)  # Registrar
         elif n == 2:
-            print("Funcionalidad pendiente")  # Eliminar
+            eliminar_pelicula(lst_titulos, lst_generos, lst_duraciones, lst_salas, lst_entradas, lst_valores, lst_estados)  # Eliminar
         elif n == 3:
-            print("Funcionalidad pendiente")  # Modificar
+            modificar_pelicula(lst_titulos, lst_generos, lst_duraciones, lst_salas, lst_entradas, lst_valores, lst_estados)  # Modificar
         elif n == 4:
-            print("Funcionalidad pendiente")  # Informe General
+            informe_general(lst_titulos, lst_generos, lst_duraciones, lst_salas, lst_entradas, lst_valores, lst_estados)  # Informe General
 
         opciones_menu()
+        n = int(input("Seleccione una opcion:"))
         n = ingresar_opcion(n)
     print("Gracias por usar CineVerse Complex")
 
 
+main()
 main()
