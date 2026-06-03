@@ -9,17 +9,15 @@ def opciones_menu():
     print("=" * 50)
 
 
-def ingresar_opcion(minimo, maximo):
+def ingresar_opcion(opcion):
     opcion = int(input("Seleccione una opcion:"))
-    while opcion < minimo or opcion > maximo:
+    while opcion < 1 or opcion > 5:
         print("La opcion seleccionada no es valida")
         opcion = int(input("Seleccione una opcion:"))
     return opcion
 
 
-def ingresar_positivo(mensaje):
-    '''Valida que los valores para las duraciones
-    y las salas sean positivos'''
+def ingresar_positivo(mensaje): # En salas estaria bueno hacer una funcion que limite a 10 salas
     num = int(input(mensaje))
     while num <= 0:
         print("Error debe ser positivo")
@@ -78,4 +76,14 @@ def ingresar_genero(mensaje):
 
 
 def ingresar_estado(mensaje):
-    
+    print(mensaje)
+    print("1. En cartelera")
+    print("2. Proximo estreno")
+    print("3. Funcion especial")
+    print("4. Finalizada")
+    lst_estados = ["En cartelera", "Proximo estreno", "Funcion especial", "Finalizada"]
+    num = int(input("Ingrese el estado (segun el numero): "))
+    while num < 1 or num > 4:
+        print("Numero invalido, intentelo nuevamente")
+        num = int(input("Ingrese el estado (segun el numero): "))
+    return lst_estados[num - 1]
