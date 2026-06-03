@@ -18,6 +18,8 @@ def ingresar_opcion(minimo, maximo):
 
 
 def ingresar_positivo(mensaje):
+    '''Valida que los valores para las duraciones
+    y las salas sean positivos'''
     num = int(input(mensaje))
     while num <= 0:
         print("Error debe ser positivo")
@@ -62,5 +64,18 @@ def validar_titulo(mensaje):
     return titulo
 
 
-def ingresar_genero():
+def ingresar_genero(mensaje):
+    lst_generos = ["Acción", "Aventura", "Comedia", "Drama",
+                    "Ciencia Ficción", "Terror", "Animación", "Documental"]
+    for genero in range(len(lst_generos)):
+        print(f"{genero + 1} {lst_generos[genero]}")
+
+    num = int(input("Ingrese el genero deseado (Ingresar con numeros):"))
+    while num < 1 or num > len(lst_generos):
+        print("Numero invalido, intentelo denuevo")
+        num = int(input("Ingrese el genero deseado (Ingresar con numeros):"))
+    return lst_generos[num - 1]
+
+
+def ingresar_estado(mensaje):
     
