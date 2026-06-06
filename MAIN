@@ -1,3 +1,8 @@
+# Materia: Pensamiento computacional, Algoritmia y Programacion
+# Equipo: 08
+# Integrantes: Bongiovanni, Chizzini, Marletto, Niederer, Sanginetto
+# Docentes: Veronica Galati, Santiago Mendoza
+# Descripcion: Sistema de gestion de peliculas CineVerse Complex
 from funciones import *
 
 
@@ -14,7 +19,7 @@ def main():
 
     opciones_menu()
     n = input("Seleccione una opcion: ")
-    while n.isdigit() == False:
+    while n.isdigit() == False:  # Ingresar_opcion tiene dentro la condicion de que sea n >= 1 y n <= 5
         print("Ingrese un numero, intentelo nuevamente")
         n = input("Seleccione una opcion: ")
     n = ingresar_opcion(n)
