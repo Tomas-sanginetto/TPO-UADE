@@ -1,3 +1,8 @@
+# Materia: Pensamiento computacional, Algoritmia y Programacion
+# Equipo: 08
+# Integrantes: Bongiovanni, Chizzini, Marletto, Niederer, Sanginetto
+# Docentes: Veronica Galati, Santiago Mendoza
+# Descripcion: Sistema de gestion de peliculas CineVerse Complex
 def opciones_menu():
     '''Mostrar el menu principal y sus opciones'''
     print("=" * 50)
@@ -152,7 +157,7 @@ def ingresar_estado_registro(mensaje):  # Se usa cuando se registra una nueva pe
 
 def informe_general(lst_titulos, lst_generos, lst_duraciones, lst_salas, lst_entradas, lst_valores, lst_estados):
     '''Valida que la lista de titulos no este vacia,luego ordena los titulos por cantidad de entradas
-    o en caso de necesitarlo en orden alfabetico, por ultimo imprime la informacion de cada pelicula'''
+    o en caso de necesitarlo en orden alfabetico, por ultimo genera una matriz con cada uno de los atributos de cada titulo y la imprime'''
     if len(lst_titulos) == 0:
         print("No hay peliculas registradas")
         return  # No devuelve nada, solo termina la funcion
@@ -173,15 +178,27 @@ def informe_general(lst_titulos, lst_generos, lst_duraciones, lst_salas, lst_ent
     print("=" * 50)
     print("     INFORME GENERAL - PELÍCULAS")
     print("=" * 50)
-    for i in range(len(lst_titulos)):
-        print(f"Título:            {lst_titulos[i]}")
-        print(f"Género:            {lst_generos[i]}")
-        print(f"Duración:          {lst_duraciones[i]} minutos")
-        print(f"Sala:              {lst_salas[i]}")
-        print(f"Entradas vendidas: {lst_entradas[i]}")
-        print(f"Valor entrada:     ${lst_valores[i]}")
-        print(f"Estado:            {lst_estados[i]}")
+    matriz = []
+    i = 0
+    while i < len(lst_titulos):
+        fila = [lst_titulos[i], lst_generos[i], lst_duraciones[i],
+                lst_salas[i], lst_entradas[i], lst_valores[i], lst_estados[i]]
+        matriz.append(fila)
+        i += 1
+
+    # imprimir desde la matriz
+    i = 0
+    while i < len(matriz):
+        print(f"Título:            {matriz[i][0]}")
+        print(f"Género:            {matriz[i][1]}")
+        print(f"Duración:          {matriz[i][2]} minutos")
+        print(f"Sala:              {matriz[i][3]}")
+        print(f"Entradas vendidas: {matriz[i][4]}")
+        print(f"Valor entrada:     ${matriz[i][5]}")
+        print(f"Estado:            {matriz[i][6]}")
         print("-" * 50)
+        i += 1
+
     input("Presione Enter para volver al menu principal")
 
 
