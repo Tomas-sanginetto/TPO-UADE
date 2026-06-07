@@ -7,7 +7,7 @@ administrar el catálogo de películas de un complejo cinematográfico.
 El sistema posibilita registrar, modificar, eliminar y visualizar películas, 
 manteniendo un control completo sobre los datos de cada función.
 
-## Sistema de Gestión de Películas
+## URL de repositorio
 
 🔗 Repositorio: https://github.com/Tomas-sanginetto/TPO-UADE.git
 
