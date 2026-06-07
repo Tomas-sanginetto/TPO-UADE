@@ -39,3 +39,9 @@ manteniendo un control completo sobre los datos de cada función.
 ## Cómo ejecutar
 
 Correr el archivo `main.py`
+
+
+## Organización del repositorio
+
+- **Trabajo En Limpio/**: contiene la versión final y funcional del sistema (`main.py`, `funciones.py`).
+- **BORRADORES/**: contiene versiones de prueba, experimentos y primeras aproximaciones realizadas durante el desarrollo, mostrando el proceso de aprendizaje del equipo antes de llegar a la solución final.
