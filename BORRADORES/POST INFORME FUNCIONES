@@ -14,6 +14,19 @@ def opciones_menu():
     print("5. Salir")
     print("=" * 50)
 
+
+def seleccionar_opcion(lista, mensaje):
+    '''Muestra la lista numerada junto con un mensaje, valida que el usuario
+    ingrese un numero dentro del rango valido y retorna el indice
+    correspondiente a la opcion elegida'''
+    print(mensaje)
+    for i in range(len(lista)):
+        print(f"{i + 1} {lista[i]}") # Muestra el valor humano y el indice "Lenguaje Python (El 1 es el cero)"
+    num = input("Ingrese el numero: ")
+    while num.isdigit() == False or int(num) < 1 or int(num) > len(lista):
+        print("Numero invalido, intentelo nuevamente")
+        num = input("Ingrese el numero: ")
+    return int(num) - 1 # Menos 1, por el indice inicial de las listas de Python [0]
 # ===================================================================================================================
 def registrar_pelicula(lst_titulos, lst_generos, lst_duraciones, lst_salas, lst_entradas, lst_valores, lst_estados):
     '''Pedir y agregar cada uno de los campos de las peliculas nuevas en las listas existentes'''
@@ -97,15 +110,7 @@ def ingresar_valor_entrada(mensaje):
 def ingresar_titulo(mensaje, lst_titulos):
     '''Muestra la lista de peliculas disponibles, pide al usuario que seleccione una
     y retorna el indice de la pelicula seleccionada'''
-    print(mensaje)
-    for i in range(len(lst_titulos)):
-        print(f"{i + 1} {lst_titulos[i]}")
-
-    num = input("Ingrese el numero:")
-    while num.isdigit() == False or int(num) < 1 or int(num) > len(lst_titulos):
-        print("Valor invalido, intentelo nuevamente")
-        num = input("Ingrese el numero:")
-    return int(num) - 1  # Devuelve el indice, no titulo
+    return seleccionar_opcion(lst_titulos, mensaje)
 
 
 def validar_titulo(mensaje):
@@ -121,48 +126,26 @@ def validar_titulo(mensaje):
 def ingresar_genero(mensaje):
     '''Muestra en pantalla cada genero de la lista, pide ingresar el genero
     y retorna el genero elegido de la lista'''
-    print(mensaje)
     lst_generos = ["Acción", "Aventura", "Comedia", "Drama",
                     "Ciencia Ficción", "Terror", "Animación", "Documental"]
-    for genero in range(len(lst_generos)):
-        print(f"{genero + 1} {lst_generos[genero]}")
-
-    num = input("Ingrese el genero deseado (Ingresar con numeros):")
-    while num.isdigit() == False or int(num) < 1 or int(num) > len(lst_generos):
-        print("Numero invalido, intentelo denuevo")
-        num = input("Ingrese el genero deseado (Ingresar con numeros):")
-    return lst_generos[int(num) - 1]
+    indice = seleccionar_opcion(lst_generos, mensaje)
+    return lst_generos[indice]
 
 
 def ingresar_estado(mensaje):
     '''Muestra los posibles estados de la pelicula, pide ingresar el estado
     y retorna el estado ingresado'''
-    print(mensaje)
-    print("1. En cartelera")
-    print("2. Proximo estreno")
-    print("3. Funcion especial")
-    print("4. Finalizada")
     opciones = ["En cartelera", "Proximo estreno", "Funcion especial", "Finalizada"]
-    num = input("Ingrese el estado (segun el numero): ")
-    while num.isdigit() == False or int(num) < 1 or int(num) > len(opciones):
-        print("Numero invalido, intentelo nuevamente")
-        num = input("Ingrese el estado (segun el numero): ")
-    return opciones[int(num) - 1]
+    indice = seleccionar_opcion(opciones, mensaje)
+    return opciones[indice]
 
 
 def ingresar_estado_registro(mensaje):  # Se usa cuando se registra una nueva peli (No puede ser estado = Finalizada)
     '''Muestra los posibles estados en el registro de una pelicula, pide ingresar el estado
     y retorna el estado ingresado'''
-    print(mensaje)
-    print("1. En cartelera")
-    print("2. Proximo estreno")
-    print("3. Funcion especial")
     opciones = ["En cartelera", "Proximo estreno", "Funcion especial"]
-    num = input("Ingrese el estado (segun el numero): ")
-    while num.isdigit() == False or int(num) < 1 or int(num) > len(opciones):
-        print("Numero invalido, intentelo nuevamente")
-        num = input("Ingrese el estado (segun el numero): ")
-    return opciones[int(num) - 1]
+    indice = seleccionar_opcion(opciones, mensaje)
+    return opciones[indice]
 
 
 # ===================================================================================================================
