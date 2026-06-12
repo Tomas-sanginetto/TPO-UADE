@@ -1,6 +1,6 @@
 # CineVerse Complex 🎬
 
-## Sistema de Gestión de Películ
+## Sistema de Gestión de Películas
 
 CineVerse Complex es un sistema de gestión desarrollado en Python que permite 
 administrar el catálogo de películas de un complejo cinematográfico. 
