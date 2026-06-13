@@ -14,7 +14,7 @@ def opciones_menu():
     print("1. Registrar Pelicula")
     print("2. Eliminar Pelicula")
     print("3. Modificar Pelicula")
-    print("4. Registrar venta")
+    print("4. Registrar Venta")
     print("5. Informe General")
     print("6. Gestionar Generos")
     print("7. Salir")
@@ -22,6 +22,8 @@ def opciones_menu():
 
 
 def gestionar_generos(lst_titulos, lst_generos, lst_generos_disponibles):
+    '''Muestra el submenu de generos y permite registrar un genero nuevo,
+    modificar los generos de una pelicula o eliminar un genero del catalogo'''
     opciones = ["Registrar nuevo genero", "Modificar generos de una pelicula", "Eliminar un genero del catalogo", "Volver al menu principal"]
     indice = seleccionar_opcion(opciones, Fore.GREEN +  "Gestion de generos - Que desea hacer?") # Fore en parametro xq el print esta adentro de la funcion
     while indice != 3:
@@ -36,6 +38,7 @@ def gestionar_generos(lst_titulos, lst_generos, lst_generos_disponibles):
 
 
 def eliminar_genero_catalogo(lst_generos_disponibles, lst_generos):
+    '''Permite elegir un genero del catalogo y lo elimina unicamente si ninguna pelicula lo esta usando'''
     if len(lst_generos_disponibles) == 0:
         print(Fore.RED + "No existen generos disponibles!")
         return 
@@ -54,6 +57,7 @@ def eliminar_genero_catalogo(lst_generos_disponibles, lst_generos):
 
 
 def modificar_generos_pelicula(lst_titulos, lst_generos, lst_generos_disponibles):
+    '''Permite seleccionar una pelicula y agregarle o quitarle generos, repite hasta que el usuario decida volver'''
     if len(lst_titulos) == 0:
         print(Fore.RED + "No hay peliculas registradas!")
         return # Anticipado para cortar las instrucciones de la funcion
@@ -70,6 +74,7 @@ def modificar_generos_pelicula(lst_titulos, lst_generos, lst_generos_disponibles
 
 
 def agregar_genero_pelicula(lst_generos, lst_generos_disponibles, indice_pelicula):
+    '''Muestra los generos del catalogo que la pelicula todavia no tiene y agrega el elegido (o uno nuevo) a esa pelicula'''
     generos_disponibles_pelicula = []
     for i in range(len(lst_generos_disponibles)):
         if lst_generos_disponibles[i] not in lst_generos[indice_pelicula]: # Revisa 1x1 los elementos internamente
@@ -86,6 +91,7 @@ def agregar_genero_pelicula(lst_generos, lst_generos_disponibles, indice_pelicul
 
     
 def quitar_genero_pelicula(lst_generos, indice_pelicula):
+    '''Permite quitar un genero de una pelicula con confirmacion, validando que siempre quede al menos un genero'''
     if len(lst_generos[indice_pelicula]) <= 1:
         print(Fore.RED + "La pelicula debe tener al menos un genero, no se puede quitar")
         return
@@ -103,7 +109,7 @@ def quitar_genero_pelicula(lst_generos, indice_pelicula):
         print("Eliminacion cancelada.")
 
 def crear_genero_nuevo(lst_generos_disponibles):
-    '''Valida que no se ingrese un genero vacio ni repetido y lo agrega a la pelicula'''
+    '''Valida que no se ingrese un genero vacio ni repetido y lo agrega al catalogo'''
     nombre = input("Ingrese el nuevo genero:").strip() # quita espacios y los valida el while 
     while nombre == "" or genero_existe(nombre, lst_generos_disponibles):
         if nombre == "":
