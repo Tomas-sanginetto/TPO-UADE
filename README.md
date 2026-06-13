@@ -7,6 +7,10 @@ administrar el catálogo de películas de un complejo cinematográfico.
 El sistema posibilita registrar, modificar, eliminar y visualizar películas, 
 manteniendo un control completo sobre los datos de cada función.
 
+Además, el sistema incorpora la gestión completa de géneros, el cálculo de la duración
+a partir de horas y minutos, y un módulo de venta de entradas con control de stock de
+butacas por sala.
+
 ## URL de repositorio
 
 🔗 Repositorio: https://github.com/Tomas-sanginetto/TPO-UADE.git
@@ -22,8 +26,8 @@ manteniendo un control completo sobre los datos de cada función.
 | Chizzini, Bautista     |
 | Bongiovanni, Federico  |
 
--Materia: Pensamiento computacional, Algortimia y Programacion
--Docente: Galati veronica, Mendoza Santiago  
+-Materia: Pensamiento computacional, Algoritmia y Programacion
+-Docente: Galati Veronica, Mendoza Santiago  
 -Facultad de Ingeniería y Ciencias Exactas
 
 ## Objetivos del Proyecto
@@ -38,6 +42,7 @@ manteniendo un control completo sobre los datos de cada función.
 ## Requisitos
 
 - Python 3.14.4
+- Colorama → instalar con: `pip install colorama`
 
 
 ## Cómo ejecutar
